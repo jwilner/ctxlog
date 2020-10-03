@@ -56,5 +56,5 @@ func ExampleSetOutput() {
 
 	ctxlog.Info(ctx, "noice")
 	// Output:
-	// {"level":"INFO", "message":"noice"}
+	// {"level":"INFO","foo":"bar","message":"noice"}
 }
