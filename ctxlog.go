@@ -221,7 +221,7 @@ func (l *Logger) output(ctx context.Context, lvl int, callDepth int, keyVal []in
 	_, _ = l.w.Write(buf)
 }
 
-func byteEncTable() (table [utf8.RuneSelf][]byte) {
+var quoteTable = func() (table [utf8.RuneSelf][]byte) {
 	const hex = "0123456789abcdef"
 	for b := byte(0); b < utf8.RuneSelf; b++ {
 		switch b {
@@ -250,9 +250,7 @@ func byteEncTable() (table [utf8.RuneSelf][]byte) {
 		}
 	}
 	return
-}
-
-var quoteTable = byteEncTable()
+}()
 
 func simpleQuote(buf []byte, s string) []byte {
 	buf = append(buf, '"')

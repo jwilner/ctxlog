@@ -4,13 +4,24 @@ import (
 	"context"
 	"github.com/jwilner/ctxlog"
 	"os"
+	"time"
 )
+
+func ExampleLogger() {
+	log := ctxlog.New(os.Stdout)
+
+	ctx := ctxlog.Add(context.Background(), "user_id", 23, "foo", "bar")
+
+	log.Debug(ctx, "default level is info")
+	log.Info(ctx, "var_val", time.Unix(0, 0).UTC(), "odd number of fields treated as message")
+	// Output:
+	// {"level":"INFO","user_id":23,"foo":"bar","var_val":"1970-01-01T00:00:00Z","message":"odd number of fields treated as message"}
+}
 
 func ExampleOptCaller() {
 	log := ctxlog.New(os.Stdout, ctxlog.OptCaller(false))
 
 	log.Error(context.Background())
-
 	// Output:
 	// {"level":"ERROR","caller":"example_test.go:12"}
 }
@@ -23,7 +34,6 @@ func ExampleAdd() {
 	ctx = ctxlog.Add(ctx, "key2", true)
 
 	log.Error(ctx, "got an error")
-
 	// Output:
 	// {"level":"ERROR","key":23,"key2":true,"message":"got an error"}
 }
@@ -35,7 +45,16 @@ func ExampleOptInfo() {
 
 	log.Debug(ctx, "hi") // debug is ignored
 	log.Info(ctx, "cool")
-
 	// Output:
 	// {"level":"INFO","message":"cool"}
+}
+
+func ExampleSetOutput() {
+	ctxlog.SetOutput(os.Stdout)
+
+	ctx := ctxlog.Add(context.Background(), "foo", "bar")
+
+	ctxlog.Info(ctx, "noice")
+	// Output:
+	// {"level":"INFO", "message":"noice"}
 }
