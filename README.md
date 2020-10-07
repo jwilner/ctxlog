@@ -1,9 +1,13 @@
+[![Tests](https://github.com/jwilner/pullquote/workflows/tests/badge.svg)](https://github.com/jwilner/pullquote/actions?query=workflow%3Atests+branch%3Amain)
+[![Lint](https://github.com/jwilner/pullquote/workflows/lint/badge.svg)](https://github.com/jwilner/pullquote/actions?query=workflow%3Alint+branch%3Amain)
+[![GoDoc](https://godoc.org/github.com/jwilner/pullquote?status.svg)](https://godoc.org/github.com/jwilner/pullquote)
+
 # ctxlog
 
 `ctxlog` provides super simple logging.
 
 <!-- goquote .#ExampleLogger -->
-Code:
+**Code**:
 ```go
 log := ctxlog.New(os.Stdout)
 
@@ -12,7 +16,7 @@ ctx := ctxlog.Add(context.Background(), "user_id", 23, "foo", "bar")
 log.Debug(ctx, "default level is info")
 log.Info(ctx, "var_val", time.Unix(0, 0).UTC(), "odd number of fields treated as message")
 ```
-Output:
+**Output**:
 ```
 {"level":"INFO","user_id":23,"foo":"bar","var_val":"1970-01-01T00:00:00Z","message":"odd number of fields treated as message"}
 ```
@@ -21,7 +25,7 @@ Output:
 A global logger is available:
 
 <!-- goquote .#ExampleSetOutput -->
-Code:
+**Code**:
 ```go
 ctxlog.SetOutput(os.Stdout)
 
@@ -29,7 +33,7 @@ ctx := ctxlog.Add(context.Background(), "foo", "bar")
 
 ctxlog.Info(ctx, "noice")
 ```
-Output:
+**Output**:
 ```
 {"level":"INFO","foo":"bar","message":"noice"}
 ```
@@ -38,13 +42,13 @@ Output:
 Along with all the usual perks:
 
 <!-- goquote .#ExampleOptCaller -->
-Code:
+**Code**:
 ```go
 log := ctxlog.New(os.Stdout, ctxlog.OptCaller(false))
 
 log.Error(context.Background())
 ```
-Output:
+**Output**:
 ```
 {"level":"ERROR","caller":"example_test.go:12"}
 ```

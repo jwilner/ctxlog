@@ -5,7 +5,6 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/jwilner/ctxlog"
 	"io/ioutil"
 	"math/rand"
 	"net"
@@ -13,6 +12,8 @@ import (
 	"testing"
 	"testing/quick"
 	"time"
+
+	"github.com/jwilner/ctxlog"
 )
 
 func equaler(t *testing.T) func(expected, actual interface{}, formatAndArgs ...interface{}) {

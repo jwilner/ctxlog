@@ -255,7 +255,7 @@ var quoteTable = func() (table [utf8.RuneSelf][]byte) {
 func simpleQuote(buf []byte, s string) []byte {
 	buf = append(buf, '"')
 
-	for i, width := 0, 1; i < len(s); i += width {
+	for i, width := 0, 0; i < len(s); i += width {
 		if b := s[i]; b < utf8.RuneSelf {
 			width = 1
 

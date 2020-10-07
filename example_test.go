@@ -2,9 +2,10 @@ package ctxlog_test
 
 import (
 	"context"
-	"github.com/jwilner/ctxlog"
 	"os"
 	"time"
+
+	"github.com/jwilner/ctxlog"
 )
 
 func ExampleLogger() {
@@ -23,7 +24,7 @@ func ExampleOptCaller() {
 
 	log.Error(context.Background())
 	// Output:
-	// {"level":"ERROR","caller":"example_test.go:12"}
+	// {"level":"ERROR","caller":"example_test.go:25"}
 }
 
 func ExampleAdd() {
