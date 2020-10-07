@@ -1,6 +1,6 @@
-[![Tests](https://github.com/jwilner/pullquote/workflows/tests/badge.svg)](https://github.com/jwilner/pullquote/actions?query=workflow%3Atests+branch%3Amain)
-[![Lint](https://github.com/jwilner/pullquote/workflows/lint/badge.svg)](https://github.com/jwilner/pullquote/actions?query=workflow%3Alint+branch%3Amain)
-[![GoDoc](https://godoc.org/github.com/jwilner/pullquote?status.svg)](https://godoc.org/github.com/jwilner/pullquote)
+[![Tests](https://github.com/jwilner/ctxlog/workflows/tests/badge.svg)](https://github.com/jwilner/ctxlog/actions?query=workflow%3Atests+branch%3Amain)
+[![Lint](https://github.com/jwilner/ctxlog/workflows/lint/badge.svg)](https://github.com/jwilner/ctxlog/actions?query=workflow%3Alint+branch%3Amain)
+[![GoDoc](https://godoc.org/github.com/jwilner/ctxlog?status.svg)](https://godoc.org/github.com/jwilner/ctxlog)
 
 # ctxlog
 
