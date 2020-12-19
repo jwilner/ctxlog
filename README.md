@@ -50,6 +50,6 @@ log.Error(context.Background())
 ```
 **Output**:
 ```
-{"level":"ERROR","caller":"example_test.go:12"}
+{"level":"ERROR","caller":"example_test.go:25"}
 ```
 <!-- /goquote -->
